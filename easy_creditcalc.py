@@ -1,13 +1,24 @@
 """
+Description:
+
+Finally, let's add to our calculator the capacity to compute the differentiated payment. 
+In such a kind of payment where the part for reducing the credit principal is constant. 
+Another part of the payment is for interest repayment and it reduces during the credit term. 
+It means that the payment is different each month. Let’s look at the formula:
+
+Objectives:
+
 At this stage, it is required to implement these features:
 
-the calculation of differentiated payment. To do this, the user may run the program specifying interest, count of periods and credit principal.
+the calculation of differentiated payment. 
+To do this, the user may run the program specifying interest, count of periods and credit principal.
 
-a capacity to calculate the same values as in the previous stage for annuity payment (principal, count of periods and value of the payment). A user specifies all known parameters with command-line arguments, while a single parameter will be unknown. This is the value the user wants to calculate.
+a capacity to calculate the same values as in the previous stage for annuity payment (principal, count of periods and value of the payment). 
+A user specifies all known parameters with command-line arguments, while a single parameter will be unknown. 
+This is the value the user wants to calculate.
 
-handling of invalid parameters. It's a good idea to show an error message Incorrect parameters in case of invalid parameters (they are discussed in detail below).
-
-The final version of your program is supposed to work from the command line and parse the following parameters:
+handling of invalid parameters. 
+It's a good idea to show an error message Incorrect parameters in case of invalid parameters (they are discussed in detail below).
 
 """
 
