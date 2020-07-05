@@ -1,127 +1,201 @@
 """
-cofee machine
+Description
+
+Let's redesign our program and write a class that represents the coffee machine. 
+The class should have a method that takes a string as input. 
+Every time the user inputs a string to the console, the program invokes this method with one argument: 
+the line that user input to the console. This system simulates pretty accurately how real-world electronic devices work. 
+External components (like buttons on the coffee machine or tapping on the screen) generate events that pass into the single interface of the program.
+
+The class should not use system input at all; 
+it will only handle the input that comes to it via this method and its string argument.
+
+The first problem that comes to mind: 
+how to write that method in a way that it represents all that coffee machine can do? 
+If the user inputs a single number, how can the method determine what that number is: 
+a variant of coffee chosen by the user or the number of the disposable cups that a special worker added into the coffee machine?
+
+The right solution to this problem is to store the current state of the machine. 
+The coffee machine has several states it can be in. 
+For example, the state could be "choosing an action" or "choosing a type of coffee". 
+Every time the user inputs something and a program passes that line to the method, 
+the program determines how to interpret this line using the information about the current state. 
+After processing this line, the state of the coffee machine can be changed or can stay the same.
+
+Objective
+
+Your final task is to refactor the program. 
+Make it so that you can communicate with the coffee machine through a single method. 
+Good luck!
+
 """
 
-def esp():
-    # needs 250 ml of water and 16 g of coffee beans. It costs $4.
-    global w, c, mo, dc
-    if (w > 250) and (c > 16) and (dc > 1):
-        w = w - 250
-        c = c - 16
-        mo = mo + 4
-        dc = dc - 1
-    else:
-        if (w < 250):
+class CoffeeMachine:
+ 
+    def __init__(self, water=400, milk=540, beans=120, cups=9, money=550):
+        self.water = water
+        self.milk = milk
+        self.beans = beans
+        self.cups = cups
+        self.money = money
+ 
+    def status_judge(self, water_change, milk_change, beans_change, cups_change, money_change):
+        if self.water + water_change < 0:
             print("Sorry, not enough water!")
-        elif (c < 16):
-            print("Sorry, not enough cofee!")
-        elif (dc < 1):
-            print("Sorry, not enough disposable cups!")
-
-
-def latt():
-    # needs 350 ml of water, 75 ml of milk, and 20 g of coffee beans. It costs $7.
-    global w, m, c, mo, dc
-    if (w > 350) and (m > 75) and (c > 20) and (dc > 1):
-        w = w - 350
-        m = m - 75
-        c = c - 20
-        mo = mo + 7
-        dc = dc - 1
-    else:
-        if (w < 350):
-            print("Sorry, not enough water!")
-        elif (m < 750):
+            return False
+        elif self.milk + milk_change < 0:
             print("Sorry, not enough milk!")
-        elif (c < 20):
-            print("Sorry, not enough cofee!")
-        elif (dc < 1):
-            print("Sorry, not enough disposable cups!")
-
-
-def cap():
-    # needs 200 ml of water, 100 ml of milk, and 12 g of coffee. It costs $6.
-    global w, m, c, mo, dc
-    if (w >= 200) and (m >= 100) and (c >= 12) and (dc >= 1):
-        w = w - 200
-        m = m - 100
-        c = c - 12
-        mo = mo + 6
-        dc = dc - 1
-    else:
-        if (w < 200):
+            return False
+        elif self.beans + beans_change < 0:
+            print("Sorry, not enough beans!")
+            return False
+        elif self.cups + cups_change < 0:
+            print("Sorry, not enough cups!")
+            return False
+        else:
+            return True
+ 
+    def status_changes(self, water_change, milk_change, beans_change, cups_change, money_change):
+        self.water = self.water + water_change
+        self.milk = self.milk + milk_change
+        self.beans = self.beans + beans_change
+        self.cups = self.cups + cups_change
+        self.money = self.money + money_change
+ 
+    def status_show(self):
+        print("The coffee machine has:")
+        print(self.water, "of water")
+        print(self.milk, "of milk")
+        print(self.beans, "of coffee beans")
+        print(self.cups, "of disposable cups")
+        print(self.money, "of money")
+ 
+    def buy(self):
+        coffee_choice = input("What do you want to buy? 1 - espresso, 2 - latte, "
+                              "3 - cappuccino, back - to main menu:")
+        if coffee_choice == '1':
+            if self.status_judge(-250, 0, -16, -1, 4):
+                print("I have enough resources, making you a coffee!")
+                self.status_changes(-250, 0, -16, -1, 4)
+        elif coffee_choice == '2':
+            if self.status_judge(-350, -75, -20, -1, 7):
+                print("I have enough resources, making you a coffee!")
+                self.status_changes(-350, -75, -20, -1, 7)
+        elif coffee_choice == '3':
+            if self.status_judge(-200, -100, -12, -1, 6):
+                print("I have enough resources, making you a coffee!")
+                self.status_changes(-200, -100, -12, -1, 6)
+ 
+    def fill(self):
+        water_fill = int(input("Write how many ml of water do you want to add:").strip())
+        milk_fill = int(input("Write how many ml of milk do you want to add:"))
+        beans_fill = int(input("Write how many grams of coffee beans do you want to add:"))
+        cups_fill = int(input("Write how many disposable cups of coffee do you want to add:"))
+        self.status_changes(water_fill, milk_fill, beans_fill, cups_fill, 0)
+ 
+    def take(self):
+        print("I gave you $" + str(self.money))
+        self.money = 0
+ 
+    def start(self):
+        while True:
+            action = input("Write action (buy, fill, take, remaining, exit):")
+            if action == "buy":
+                self.buy()
+            elif action == "fill":
+                self.fill()
+            elif action == "take":
+                self.take()
+            elif action == "remaining":
+                self.status_show()
+            elif action == "exit":
+                break
+ 
+ 
+test = CoffeeMachine()
+test.start()
+"""
+class CoffeeMachine:
+ 
+    def __init__(self, water=400, milk=540, beans=120, cups=9, money=550):
+        self.water = water
+        self.milk = milk
+        self.beans = beans
+        self.cups = cups
+        self.money = money
+ 
+    def status_judge(self, water_change, milk_change, beans_change, cups_change, money_change):
+        if self.water + water_change < 0:
             print("Sorry, not enough water!")
-        elif (m < 100):
+            return False
+        elif self.milk + milk_change < 0:
             print("Sorry, not enough milk!")
-        elif (c < 12):
-            print("Sorry, not enough cofee!")
-        elif (dc < 1):
-            print("Sorry, not enough disposable cups!")
-
-
-def buy():
-    buying = input(
-        "What do you want to buy? 1 - espresso, 2 - latte, 3 - cappuccino, back - to main menu:")
-    if (buying == "1") or (buying == "espresso"):
-        esp()
-    elif (buying == "2") or (buying == "latte"):
-        latt()
-    elif (buying == "3") or (buying == "cappuccino"):
-        cap()
-    elif (buying == "back"):
-        pass
-    print("I have enough resources, making you a coffee!")
-
-
-def fill():
-    global w, m, c, dc, mo
-    global in_w, in_m, in_c, in_dc
-    in_w = int(input("Write how many ml of water do you want to add:"))
-    in_m = int(input("Write how many ml of milk do you want to add:"))
-    in_c = int(input("Write how many grams of coffee beans do you want to add:"))
-    in_dc = int(
-        input("Write how many disposable cups of coffee do you want to add:"))
-    w = w + in_w
-    m = m + in_m
-    c = c + in_c
-    dc = dc + in_dc
-
-
-def take():
-    global mo
-    print("I gave you ${}".format(mo))
-    mo = 0
-
-
-def remaining():
-    global w, m, c, dc, mo
-    print("""The coffee machine has:
-{} of water
-{} of milk
-{} of coffee beans
-{} of disposable cups
-${} of money""".format(w, m, c, dc, mo))
-
-
-w = 400
-m = 540
-c = 120
-dc = 9
-mo = 550
-
-while True:
-    action = input("Write action (buy, fill, take, remaining, exit):")
-    if action == "buy":
-        buy()
-
-    elif action == "fill":
-        fill()
-
-    elif action == "take":
-        take()
-
-    elif action == "remaining":
-        remaining()
-
-    elif action == "exit":
-        break
+            return False
+        elif self.beans + beans_change < 0:
+            print("Sorry, not enough beans!")
+            return False
+        elif self.cups + cups_change < 0:
+            print("Sorry, not enough cups!")
+            return False
+        else:
+            return True
+ 
+    def status_changes(self, water_change, milk_change, beans_change, cups_change, money_change):
+        self.water = self.water + water_change
+        self.milk = self.milk + milk_change
+        self.beans = self.beans + beans_change
+        self.cups = self.cups + cups_change
+        self.money = self.money + money_change
+ 
+    def status_show(self):
+        print("The coffee machine has:")
+        print(self.water, "of water")
+        print(self.milk, "of milk")
+        print(self.beans, "of coffee beans")
+        print(self.cups, "of disposable cups")
+        print(self.money, "of money")
+ 
+    def buy(self):
+        coffee_choice = input("What do you want to buy? 1 - espresso, 2 - latte, "
+                              "3 - cappuccino, back - to main menu:")
+        if coffee_choice == '1':
+            if self.status_judge(-250, 0, -16, -1, 4):
+                print("I have enough resources, making you a coffee!")
+                self.status_changes(-250, 0, -16, -1, 4)
+        elif coffee_choice == '2':
+            if self.status_judge(-350, -75, -20, -1, 7):
+                print("I have enough resources, making you a coffee!")
+                self.status_changes(-350, -75, -20, -1, 7)
+        elif coffee_choice == '3':
+            if self.status_judge(-200, -100, -12, -1, 6):
+                print("I have enough resources, making you a coffee!")
+                self.status_changes(-200, -100, -12, -1, 6)
+ 
+    def fill(self):
+        water_fill = int(input("Write how many ml of water do you want to add:").strip())
+        milk_fill = int(input("Write how many ml of milk do you want to add:"))
+        beans_fill = int(input("Write how many grams of coffee beans do you want to add:"))
+        cups_fill = int(input("Write how many disposable cups of coffee do you want to add:"))
+        self.status_changes(water_fill, milk_fill, beans_fill, cups_fill, 0)
+ 
+    def take(self):
+        print("I gave you $" + str(self.money))
+        self.money = 0
+ 
+    def start(self):
+        while True:
+            action = input("Write action (buy, fill, take, remaining, exit):")
+            if action == "buy":
+                self.buy()
+            elif action == "fill":
+                self.fill()
+            elif action == "take":
+                self.take()
+            elif action == "remaining":
+                self.status_show()
+            elif action == "exit":
+                break
+ 
+ 
+test = CoffeeMachine()
+test.start()
