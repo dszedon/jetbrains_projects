@@ -1,24 +1,28 @@
 """
-Description:
+CREDIT CALCULATOR
 
-Finally, let's add to our calculator the capacity to compute the differentiated payment. 
-In such a kind of payment where the part for reducing the credit principal is constant. 
-Another part of the payment is for interest repayment and it reduces during the credit term. 
-It means that the payment is different each month. Let’s look at the formula:
+About
+Finance is an important part of the life of any people. Sometimes you think about getting additional income and want to open a deposit account. 
+And sometimes you need additional money right now and want to take a credit or mortgage. 
+Anyway, you may want to calculate different financial indicators to make a decision. 
+Let’s make such an instrument that can help us.
 
-Objectives:
+Learning outcomes
+You’ll learn how to use mathematics and Python in everyday tasks, use third-party modules and libraries. 
+Also, you’ll learn more about different financial instruments. 
+Finally, you will make your own credit calculator!
 
-At this stage, it is required to implement these features:
+Stage 1
+Create a simple program which will print messages about some credit.
 
-the calculation of differentiated payment. 
-To do this, the user may run the program specifying interest, count of periods and credit principal.
+Stage 2
+Communicate with the user to get necessary values, do simple mathematical operations and output the result.
 
-a capacity to calculate the same values as in the previous stage for annuity payment (principal, count of periods and value of the payment). 
-A user specifies all known parameters with command-line arguments, while a single parameter will be unknown. 
-This is the value the user wants to calculate.
+Stage 3
+Calculate real credit parameters by using the mathematical capabilities of Python.
 
-handling of invalid parameters. 
-It's a good idea to show an error message Incorrect parameters in case of invalid parameters (they are discussed in detail below).
+Stage 4
+Make the credit calculator be able to work with different types of payment and to work with command-line arguments.
 
 """
 
