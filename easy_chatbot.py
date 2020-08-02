@@ -1,19 +1,28 @@
 """
-Description
+About
+Here, at the beginning of your programmer’s path, creating a simple console chat bot will do wonders to guide you through the basics of coding. 
+During this journey you will also play some word and number games that you are going to implement all on your own. 
+Pack up and let’s hit the road, my friend!
 
-At the final stage, you will improve your simple bot so that it can give you a test and check your answers. 
-The test should be a multiple-choice quiz about programming. 
-Your bot has to repeat the test until you answer correctly and congratulate you upon completion.
+Learning outcomes
+You’ll get to know the basic syntax of Python and write a simple program using variables, conditions, loops, and functions.
 
-Objective
+Stage 1
+Teach your assistant to introduce itself in the console.
 
-Your bot can ask anything you want, but there are two rules for your output:
+Stage 2
+Introduce yourself to the bot.
 
-the line with the test should end with the question mark character;
-an option starts with a digit followed by the dot (1., 2., 3., 4.)
-If a user enters an incorrect answer, the bot may print a message:
-  Please, try again.
-The program should stop on the correct answer and print Congratulations, have a nice day! at the end.
+Stage 3
+Use your knowledge of strings and numbers to make the assistant guess your age.
+
+Stage 4
+Your assistant is old enough to learn how to count. 
+And you are experienced enough to apply a for loop at this stage!
+
+Stage 5
+At this point, the assistant will be able to check your knowledge and ask multiple-choice questions. 
+Add some functions to your code and make the stage even better.
 
 """
 
