@@ -1,13 +1,25 @@
 """
-DESCRIPTION:
-It's time to make your project more convenient and understandable. 
-In this final stage, your software will be ready for use by the zoo staff. 
-Your program should understand the habitat numbers, show the animals, and be able to work infinitely.
+ZOOKEEPER
 
-OBJECTIVES:
-Your program should repeat the behavior from the previous stage, now in a loop.
-Do not forget to add an exit opportunity for the program: inputting the word exit must terminate the program.
-At the end of execution, it must print See you!.
+
+About
+This short code challenge can help the local zoo look after its denizens. You will create a tool for monitoring animals and their status.
+
+Learning outcomes
+This project is aimed at our beginners. 
+It helps you understand some syntax basics and learn how to work with variables, data storage types such as lists, and while loops.
+
+Stage 1
+First, let's try to get some simple output from your code.
+
+Stage 2
+Show the zookeeper an image of her ward.
+
+Stage 3
+The zookeeper wants to know what is inside each habitat, by its number.
+
+Stage 4
+Finally, your program is able to work for as long as needed!
 
 """
 
