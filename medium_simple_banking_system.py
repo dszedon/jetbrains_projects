@@ -1,5 +1,5 @@
 """
-Simple Banking System
+SIMPLE BANKING SYSTEM
 
 About
 Everything goes digital these days, and so does money. Today, most people have credit cards, which save us time, energy and nerves. 
@@ -9,6 +9,19 @@ Learning outcomes
 In this project, you will find out how the banking system works and learn about SQL.
 We'll also see how Luhn algorithm can help us avoid mistakes when entering the card number. 
 As an overall result, you'll get new experience in Python.
+
+Stage 1
+Find out what a credit card consists of
+
+Stage 2
+Implement Luhn Algorithm to check the card number for validity
+
+Stage 3
+Create a database and store your data in it
+
+Stage 4
+Improve your system by extending its functionality.
+
 
 """
 
