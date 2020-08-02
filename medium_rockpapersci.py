@@ -1,67 +1,35 @@
 """
-Description
+ROCKET SCISSORS PAPER
 
-How about some brand new rules? The original game has a fairly small choice of options.
+About
+If you’ve ever wanted to create games, this project will get you started! 
+In this project you will code a Rock-Paper-Scissors-Lizard-Spock game, a more advanced version of Rock-Paper-Scissors, which can be played against the computer.
 
-Extended versions of the game are decreasing the probability of draw, so it could be cool to play them.
-Now, your program should be able to accept alternative lists of options, like Rock, Paper, Scissors, Lizard, Spock, or even a list like this:
+Learning outcomes
+A playable Rock-Paper-Scissors game, with a Player vs Computer mode. 
+Practice using arrays, the Random library, formatted strings, and algorithms.
 
-At this stage, before the start of the game, the user will be able to choose the options that will be used. 
-After entering his/her name, the user should provide a list of options separated by a comma. For example,
+Stage 1
+Before learning how to play the game properly, 
+let’s learn how to cheat! Using conditional statements, 
+you’ll write a program that always defeats the human player in the Rock-Paper-Scissors game.
 
-rock,paper,scissors,lizard,spock
+Stage 2
+Let’s not mess with the player too much, though: from now on, we’re going to play fair. 
+You’ll be able to do this with the help of the random module, while string formatting will assist you in announcing the end result of the game.
 
-If the user inputs an empty line, your program should start the game with default options: rock. paper and scissors.
+Stage 3
+Can’t stop, won’t stop! A single game is never enough. 
+Learn about loops in Python and apply them to make multiple game rounds possible.
 
-After the game options are defined, your program should output Okay, let's start
+Stage 4
+It’s time to find out who the best Rock-Paper-Scissors player is! 
+You are going to need the basics of file handling to read the records of the results of previous games, as well as tally the user’s score in the current game.
 
-Whatever list of options the user chooses, your program, obviously, 
-should be able to identify which option beats which, that is, the relationships between different options. 
-First, every option is equal to itself (causing a draw if both user and computer choose the same option). 
-Secondly, every option wins over one half of the other options of the list and gets defeated by another half. 
-How to determine which options are stronger or weaker than the option you're currently looking at? 
-Well, you can try to do it this way: take the list of options (provided by the user or the default one). 
-Find the option for which you want to know its relationships with other options. 
-Take all the options that follow this chosen option in the list. 
-Add to them the list of options that precede the chosen option. 
-Now you have another list of options that doesn't include the "chosen" option and 
-has the different order of elements in it (first go the options following the chosen one in the original list, 
-after them are the ones that precede it). 
-So, in this "new" list, the first half of the options will be defeating the "chosen" option, and the second half will get beaten by it.
-
-For example, the user's list of options is rock,paper,scissors,lizard,spock. You want to know what options are weaker than lizard. 
-By looking at the list spock,rock,paper,scissors you realize that spock and rock will be beating the lizard, and paper and scissors will get defeated by it. 
-For spock it'll be almost the same, but it'll get beaten by rock and paper, and prevail over scissors and lizard. 
-For the version of the game with 15 options, you can look at the picture above to understand the relationships between options.
-
-Of course, this is not the most efficient way to determine which option prevails over which. 
-You are welcome to try to develop some other methods of tackling this problem.
-
-Objectives:
-
-Objectives
-Your program should:
-
-Output a line Enter your name: . Note that the user should enter his/her name on the same line (not the one following the output!)
-Read input specifying the user's name and output a new line Hello, <name>
-Read a file named rating.txt and check if there's a record for the user with the same name; 
-if yes, use the score specified in the rating.txt for this user as a starting point for calculating the score in the current game. 
-If no, start counting user's score from 0.
-Read input specifying the list of options that will be used for playing the game (options are separated by comma). 
-If the input is an empty line, play with default options.
-Output a line Okay, let's start
-Play the game by the rules defined on the previous stages:
-Read user's input
-If the input is !exit, output Bye! and stop the game
-If the input is the name of the option, then:
-Pick a random option
-Output a line with the result of the game in the following format (<option> is the name of the option chosen by the program):
-Lose -> Sorry, but computer chose <option>
-Draw -> There is a draw (<option>)
-Win -> Well done. Computer chose <option> and failed
-For each draw, add 50 points to the score. For each user's win, add 100 to his/her score. In case the user loses, don't change the score.
-If the input corresponds to anything else, output Invalid input
-Play the game again (with the same options that were defined before the start of the game)
+Stage 5
+Let's raise the stakes, shall we? In the final stage of the project, 
+your program will let the player choose what options will be used in the game and how many of them will be there. 
+This will require some more advanced knowledge about lists in Python.
 
 """
 import math
