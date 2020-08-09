@@ -22,7 +22,6 @@ Create a database and store your data in it
 Stage 4
 Improve your system by extending its functionality.
 
-
 """
 
 import random
