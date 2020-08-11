@@ -32,7 +32,6 @@ Stage 7
 Time to upgrade and add even more possible operations: multiplication, division, powers, and calculations in parentheses.
 
 """
-
 def start():
 
     while True:
@@ -54,55 +53,61 @@ def start():
             if error_checks(numbers) == "ERROR":
                 raise Exception
 
+            # CHECK FOR MEMORY SAVES
+            for x in numbers:
+                if "=" in x:
+                    memory_save(numbers)
+                    raise Exception
+
         except Exception:
             pass
 
         else:
-            try:
-                # CHECK FOR MEMORY SAVES
-                for x in numbers:
-                    if "=" in x:
-                        memory_save(numbers)
-                        raise Exception
+            numbers = check_operators(numbers)
 
-                if check_parentesis(numbers) == "ERROR":
-                    raise Exception
+            numbers = memory_check(numbers)
 
-                numbers = check_operators(numbers)
-                if numbers == "ERROR":
-                    raise Exception
+            print(rpn_calculator(rpn_converter(numbers)))
 
-            except Exception:
-                pass
-
-            else:
-                numbers = memory_check(numbers)
-
-                print(rpn_calculator(rpn_converter(numbers)))
         finally:
             clean()
 
 
 def error_checks(numbers):
 
-    # a2a
-    if len(numbers) == 1:
-        if numbers[0].isalpha == False and numbers[0].isdigit() == False:
-            print("Unknown variable")
-            return "ERROR"
+    try:
+        # a2a
+        if len(numbers) == 1:
+            if numbers[0].isalpha == False and numbers[0].isdigit() == False:
+                raise Exception
 
-    # NOT IN MEMORY, b = c
-    elif len(numbers) == 3:
+        # NOT IN MEMORY, B = C; C NOT IN MEMORY
+        elif len(numbers) == 3:
 
-        if numbers[0].isalpha() == False and numbers[0].isdigit() == False:
-            print("Invalid variable")
-            return "ERROR"
+            if numbers[0].isalpha() == False and numbers[0].isdigit() == False:
+                print("Invalid variable")
+                return "ERROR"
 
-        elif numbers[2].isalpha() and numbers[2] not in memory:
-            print("Unknown variable")
-            return "ERROR"
+            elif numbers[2].isalpha() and numbers[2] not in memory:
+                raise Exception
 
-    if numbers.count("=") > 1:
+    except Exception:
+        print("Unknown variable")
+        return "ERROR"
+
+    try:
+        for x in numbers:
+            # CHECK FOR MULTPLES "/" OR "*"
+            if (x.count("/") > 1) or (x.count("*") > 1):
+                raise Exception
+
+        if check_parentesis(numbers) == "ERROR":
+            raise Exception
+
+        if numbers.count("=") > 1:
+            raise Exception
+
+    except Exception:
         print("Invalid expression")
         return "ERROR"
 
@@ -150,7 +155,6 @@ def check_parentesis(numbers):
                 parentesis_count = parentesis_count + str(x[1])
 
     if parentesis_count.count("(") != parentesis_count.count(")"):
-        print("Invalid expression")
         return "ERROR"
 
 
@@ -196,10 +200,6 @@ def check_operators(numbers):
                 new_numbers.append("-")
             else:
                 new_numbers.append("+")
-
-        elif (x.count("/") > 1) or (x.count("*") > 1):
-            print("Invalid expression")
-            return "ERROR"
 
         else:
             new_numbers.append(x)
