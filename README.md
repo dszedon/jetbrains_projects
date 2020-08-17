@@ -4,9 +4,9 @@ Projects for JetBrains python certificate.
 
 From easy to hard, and the "challenging" for experience.
 
-# EASY
+## EASY
 
-# Zookeeper
+### Zookeeper
 
 About
 This short code challenge can help the local zoo look after its denizens. You will create a tool for monitoring animals and their status.
@@ -16,7 +16,7 @@ Learning outcomes
 This project is aimed at our beginners. 
 It helps you understand some syntax basics and learn how to work with variables, data storage types such as lists, and while loops.
 
-# Hangman Game
+### Hangman Game
 
 About
 
@@ -31,9 +31,10 @@ Best project for Python Basics: uses functions, loops, lists, and other variable
 The Random module is a cherry on top. 
 Don’t be intimidated by the number of stages – they ensure that your immersion in Python is smooth and safe.
 
-# Credit Calculator
+#### Credit Calculator
 
 About
+
 Finance is an important part of the life of any people. Sometimes you think about getting additional income and want to open a deposit account. 
 And sometimes you need additional money right now and want to take a credit or mortgage. 
 Anyway, you may want to calculate different financial indicators to make a decision. 
@@ -45,7 +46,8 @@ You’ll learn how to use mathematics and Python in everyday tasks, use third-pa
 Also, you’ll learn more about different financial instruments. 
 Finally, you will make your own credit calculator!
 
-# Cofee Machine
+### Cofee Machine
+
 About
 
 What can be better than a cup of coffee during a break? A coffee that you don’t have to make yourself. 
@@ -59,7 +61,7 @@ Learning outcomes
 This project allows you to get a taste of Python. 
 Practice working with functions, challenge yourself with loops and conditions, and get more confident in Python.
 
-# Simple Chatty Bot
+### Simple Chatty Bot
 
 About
 
@@ -74,9 +76,9 @@ You’ll get to know the basic syntax of Python and write a simple program using
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-# Medium
+## Medium
 
-# Tic Tac Toe
+### Tic Tac Toe
 
 About
 
@@ -91,7 +93,7 @@ After finishing this project, you'll get to know a lot about planning and develo
 using classes and functions, handling errors, and processing user input. 
 You will also learn to use OOP (Object-Oriented Programming) in the process.
 
-# Simple Banking System
+### Simple Banking System
 
 About
 
@@ -105,7 +107,7 @@ In this project, you will find out how the banking system works and learn about 
 We'll also see how Luhn algorithm can help us avoid mistakes when entering the card number. 
 As an overall result, you'll get new experience in Python.
 
-# Rocket Scissors Paper
+### Rocket Scissors Paper
 
 About
 
@@ -117,7 +119,7 @@ Learning outcomes
 A playable Rock-Paper-Scissors game, with a Player vs Computer mode. 
 Practice using arrays, the Random library, formatted strings, and algorithms.
 
-# Numeric Matrix Processor
+### Numeric Matrix Processor
 
 About
 
@@ -130,9 +132,9 @@ Learning outcomes
 Apart from learning a whole lot about matrices, you will become familiar with the Math library, recursion, and the many ways of using nested lists in practice.
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
-# Hard
+## Hard
 
-# Tic Tac Toe with AI
+### Tic Tac Toe with AI
 
 About
 
@@ -143,7 +145,7 @@ Learning outcomes
 After finishing this project, you'll get to know a lot about planning and developing a complex program from scratch, using classes and functions, handling errors, and processing user input. You will also learn to use OOP (Object-Oriented Programming) in the process.
 
 
-# Smart Calculator
+### Smart Calculator
 
 About
 
