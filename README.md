@@ -15,7 +15,7 @@ From easy to hard, and the "challenging" for getting experience.
 [Simple Banking System](#zookeeper)   
 [Rocket Scissors Paper](#rocket-scissors-paper)   
 [Numeric Matrix Processor](#numeric-matrix-processor)   
-* Hard
+* Hard   
 [Smart Calculator](#smart-calculator)   
 [Tic Tac Toe with AI](#tic-tac-toe-with-ai)
 
@@ -30,7 +30,7 @@ This short code challenge can help the local zoo look after its denizens. You wi
 **Learning outcomes**...
 This project is aimed at our beginners. 
 It helps you understand some syntax basics and learn how to work with variables, data storage types such as lists, and while loops.
-
+---
 ### Hangman Game
 
 **About**   
@@ -43,7 +43,7 @@ Make a program that plays Hangman with you – and good luck with the guessing!
 Best project for Python Basics: uses functions, loops, lists, and other variables. 
 The Random module is a cherry on top. 
 Don’t be intimidated by the number of stages – they ensure that your immersion in Python is smooth and safe.
-
+---
 ### Credit Calculator
 
 **About**   
@@ -56,7 +56,7 @@ Let’s make such an instrument that can help us.
 You’ll learn how to use mathematics and Python in everyday tasks, use third-party modules and libraries. 
 Also, you’ll learn more about different financial instruments. 
 Finally, you will make your own credit calculator!
-
+---
 ### Cofee Machine
 
 **About**   
@@ -69,7 +69,7 @@ You can get three types of coffee: espresso, cappuccino, and latte. Since nothin
 **Learning outcomes**   
 This project allows you to get a taste of Python. 
 Practice working with functions, challenge yourself with loops and conditions, and get more confident in Python.
-
+---
 ### Simple Chatty Bot
 
 **About**   
@@ -79,7 +79,7 @@ Pack up and let’s hit the road, my friend!
 
 **Learning outcomes**   
 You’ll get to know the basic syntax of Python and write a simple program using variables, conditions, loops, and functions.
-
+---
 ## Medium
 
 ### Tic Tac Toe
@@ -94,7 +94,7 @@ Let’s program Tic-Tac-Toe and get playing!
 After finishing this project, you'll get to know a lot about planning and developing a complex program from scratch, 
 using classes and functions, handling errors, and processing user input. 
 You will also learn to use OOP (Object-Oriented Programming) in the process.
-
+---
 ### Simple Banking System
 
 **About**   
@@ -106,7 +106,7 @@ In this project, you will develop a simple banking system with database.
 In this project, you will find out how the banking system works and learn about SQL.
 We'll also see how Luhn algorithm can help us avoid mistakes when entering the card number. 
 As an overall result, you'll get new experience in Python.
-
+---
 ### Rocket Scissors Paper
 
 **About**   
@@ -116,7 +116,7 @@ In this project you will code a Rock-Paper-Scissors-Lizard-Spock game, a more ad
 **Learning outcomes**   
 A playable Rock-Paper-Scissors game, with a Player vs Computer mode. 
 Practice using arrays, the Random library, formatted strings, and algorithms.
-
+---
 ### Numeric Matrix Processor
 
 **About**   
@@ -126,7 +126,7 @@ If you are working on your tech or math major, this project is a good chance for
 
 **Learning outcomes**   
 Apart from learning a whole lot about matrices, you will become familiar with the Math library, recursion, and the many ways of using nested lists in practice.
-
+---
 ## Hard
 
 ### Tic Tac Toe with AI
@@ -136,8 +136,7 @@ Everybody remembers this paper-and-pencil game from childhood: Tic-Tac-Toe, also
 
 **Learning outcomes**   
 After finishing this project, you'll get to know a lot about planning and developing a complex program from scratch, using classes and functions, handling errors, and processing user input. You will also learn to use OOP (Object-Oriented Programming) in the process.
-
-
+---
 ### Smart Calculator
 
 **About**   
@@ -148,3 +147,4 @@ In this project, you will write a calculator that not only adds, subtracts, and 
 **Learning outcomes**   
 Apart from writing a useful program (everyone uses calculators!), you will learn a lot about lists, strings and dictionaries. 
 You will also get closer experience with 2 important data structures: the stack and the queue.
+---
