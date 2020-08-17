@@ -5,12 +5,12 @@ Projects for JetBrains python certificate.
 From easy to hard, and the "challenging" for getting experience.
 
 
-##Table of Content
+## Table of Content
 * [Easy] (#easy)
 * [Medium] (#medium)
 * [Hard] (#hard)
 
-## EASY
+## Easy
 
 ### Zookeeper
 
