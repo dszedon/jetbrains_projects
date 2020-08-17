@@ -1,20 +1,24 @@
 # JETBRAINS PROJECTS
 
-Projects for JetBrains python certificate.
-
+Projects for JetBrains python certificate.   
 From easy to hard, and the "challenging" for getting experience.
 
-## Table of Contents  
-
-[Easy](#easy)  
-[Medium](#medium)  
-[Hard](#hard)
-
 ### Table of Contents
-* Easy
+* Easy   
 [Zookeeper](#zookeeper)   
-[Hangman](#hangman-game)
-[Credit Calc](#credit-calculator)
+[Hangman](#hangman-game)   
+[Credit Calculator](#credit-calculator)   
+[Cofee Machine](#cofee-machine) 
+[Simply Chatty Bot](#simply-chatty-bot)   
+* Medium   
+[Tic Tac Toe](#zookeeper)   
+[Simple Banking System](#zookeeper)   
+[Rocket Scissors Paper](#rocket-scissors-paper)   
+[Numeric Matrix Processor](#numeric-matrix-processor)   
+* Hard
+[Smart Calculator](#smart-calculator)   
+[Tic Tac Toe with AI](#tic-tac-toe-with-ai)
+
 
 ## Easy
 
