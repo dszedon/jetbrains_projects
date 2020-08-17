@@ -2,18 +2,20 @@
 
 Projects for JetBrains python certificate.
 
-From easy to hard, and the "challenging" for experience.
+From easy to hard, and the "challenging" for getting experience.
+
 
 ##Table of Content
 *[Easy] #EASY
 *[Medium] #MEDIUM
 *[Hard] #HAD
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## EASY
 
 ### Zookeeper
 
-####About
+About
 This short code challenge can help the local zoo look after its denizens. You will create a tool for monitoring animals and their status.
 
 Learning outcomes
@@ -78,9 +80,6 @@ Learning outcomes
 
 You’ll get to know the basic syntax of Python and write a simple program using variables, conditions, loops, and functions.
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
 ## Medium
 
 ### Tic Tac Toe
@@ -136,7 +135,6 @@ Learning outcomes
 
 Apart from learning a whole lot about matrices, you will become familiar with the Math library, recursion, and the many ways of using nested lists in practice.
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Hard
 
 ### Tic Tac Toe with AI
