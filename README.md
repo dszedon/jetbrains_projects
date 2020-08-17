@@ -4,6 +4,10 @@ Projects for JetBrains python certificate.
 
 From easy to hard, and the "challenging" for getting experience.
 
+##### Table of Contents  
+[Easy](#easy)  
+[Medium](#medium)  
+
 
 ## Table of Content
 * [Easy] (#easy)
