@@ -138,26 +138,22 @@ Apart from learning a whole lot about matrices, you will become familiar with th
 
 ## Hard
 
-### Tic Tac Toe with AI
+#### Tic Tac Toe with AI
 
 **About**
-
 Everybody remembers this paper-and-pencil game from childhood: Tic-Tac-Toe, also known as Noughts and crosses or Xs and Os. A single mistake usually costs you the      game, but thankfully it is simple enough that most players discover the best strategy quickly. Let’s program Tic-Tac-Toe and get playing!
 
 **Learning outcomes**
-
 After finishing this project, you'll get to know a lot about planning and developing a complex program from scratch, using classes and functions, handling errors, and processing user input. You will also learn to use OOP (Object-Oriented Programming) in the process.
 
 
 ### Smart Calculator
 
 **About**
-
 Calculators are a very helpful tool that we all use on a regular basis. 
 Why not create one yourself, and make it really special? 
 In this project, you will write a calculator that not only adds, subtracts, and multiplies, but is also smart enough to remember your previous calculations.
 
 **Learning outcomes**
-
 Apart from writing a useful program (everyone uses calculators!), you will learn a lot about lists, strings and dictionaries. 
 You will also get closer experience with 2 important data structures: the stack and the queue.
