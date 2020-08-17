@@ -6,14 +6,14 @@ From easy to hard, and the "challenging" for getting experience.
 
 ##### Table of Contents  
 [Easy](#easy)  
-[Medium](#medium)
-[Hard] (#hard)
+[Medium](#medium)  
+[Hard](#hard)
 
 ## Easy
 
 ### Zookeeper
 
-**About**...
+**About**   
 This short code challenge can help the local zoo look after its denizens. You will create a tool for monitoring animals and their status.
 
 **Learning outcomes**...
