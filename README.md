@@ -10,6 +10,12 @@ From easy to hard, and the "challenging" for getting experience.
 [Medium](#medium)  
 [Hard](#hard)
 
+### Table of Contents
+* Easy
+[Zookeeper](#zookeeper)   
+[Hangman](#hangman-game)
+[Credit Calc](#credit-calculator)
+
 ## Easy
 
 ### Zookeeper
