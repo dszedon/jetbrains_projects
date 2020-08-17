@@ -6,13 +6,8 @@ From easy to hard, and the "challenging" for getting experience.
 
 ##### Table of Contents  
 [Easy](#easy)  
-[Medium](#medium)  
-
-
-## Table of Content
-* [Easy] (#easy)
-* [Medium] (#medium)
-* [Hard] (#hard)
+[Medium](#medium)
+[Hard] (#hard)
 
 ## Easy
 
