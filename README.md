@@ -6,9 +6,9 @@ From easy to hard, and the "challenging" for getting experience.
 
 
 ##Table of Content
-* [Easy] #EASY
-* [Medium] #MEDIUM
-* [Hard] #HAD
+* [Easy] (#easy)
+* [Medium] (#medium)
+* [Hard] (#hard)
 
 ## EASY
 
