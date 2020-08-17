@@ -4,11 +4,16 @@ Projects for JetBrains python certificate.
 
 From easy to hard, and the "challenging" for experience.
 
+##Table of Content
+*[Easy] #EASY
+*[Medium] #MEDIUM
+*[Hard] #HAD
+
 ## EASY
 
 ### Zookeeper
 
-About
+####About
 This short code challenge can help the local zoo look after its denizens. You will create a tool for monitoring animals and their status.
 
 Learning outcomes
