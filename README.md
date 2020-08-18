@@ -17,7 +17,7 @@ From easy to hard, and the "challenging" for getting experience.
 [Numeric Matrix Processor](#numeric-matrix-processor)   
 * Hard   
 [Smart Calculator](#smart-calculator)   
-[Tic Tac Toe with AI](#tic-tac-toe-with-ai)
+[Tic Tac Toe with AI](#tic-tac-toe-with-ai)   
 [To-Do List](#to-do-list)
 
 
