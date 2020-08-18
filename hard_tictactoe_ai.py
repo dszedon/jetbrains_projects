@@ -30,6 +30,10 @@ Stage 5
 Oh no, what have we created here? 
 An unbeatable AI monster! Indeed, this complex algorithm guarantees a win or a draw. 
 
+
+TODO:
+-algorithm for hard mode
+-re do medium mode
 """
 
 from random import choice
