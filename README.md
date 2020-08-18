@@ -18,6 +18,7 @@ From easy to hard, and the "challenging" for getting experience.
 * Hard   
 [Smart Calculator](#smart-calculator)   
 [Tic Tac Toe with AI](#tic-tac-toe-with-ai)
+[To-Do List](#to-do-list)
 
 
 ## Easy
@@ -157,5 +158,14 @@ In this project, you will write a calculator that not only adds, subtracts, and 
 **Learning outcomes**   
 Apart from writing a useful program (everyone uses calculators!), you will learn a lot about lists, strings and dictionaries. 
 You will also get closer experience with 2 important data structures: the stack and the queue.
+
+----
+### To-Do List 
+
+**About**   
+To-Do list can improve your work and personal life. You can use it to reduce the stress in your life and get more done in less time. It also helps you become more reliable for other people and save time for the best things in life. So let's implement it!
+
+**Learning outcomes**   
+To-Do list that will help you manage your tasks. You will practice using loops, conditions and statement branches. And also you will learn the basics of SQLAlchemy to manage SQLite database on python!
 
 ----
