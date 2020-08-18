@@ -1,6 +1,5 @@
 """
-
-To-Do List 
+TO-DO LIST
 
 About  
 To-Do list can improve your work and personal life. 
