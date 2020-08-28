@@ -18,8 +18,8 @@ From easy to hard, and the "challenging" for getting experience.
 * Hard   
 [Smart Calculator](#smart-calculator)   
 [Tic Tac Toe with AI](#tic-tac-toe-with-ai)   
-[To-Do List](#to-do-list)   
-[Text-Based Browser] (#text-Based-browser)
+[To-Do List](#to-do-list)     
+[Text-Based Browser](#text-Based-browser)
 
 
 ## Easy
