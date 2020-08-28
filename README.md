@@ -19,8 +19,8 @@ From easy to hard, and the "challenging" for getting experience.
 [Smart Calculator](#smart-calculator)   
 [Tic Tac Toe with AI](#tic-tac-toe-with-ai)   
 [To-Do List](#to-do-list)     
-[Text-Based Browser](#text-Based-browser)
-[Password Hacker](#password-hacker)
+[Text-Based Browser](#text-Based-browser)   
+[Password Hacker](#password-hacker)   
 
 
 ## Easy
