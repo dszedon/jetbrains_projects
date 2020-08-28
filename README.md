@@ -18,7 +18,8 @@ From easy to hard, and the "challenging" for getting experience.
 * Hard   
 [Smart Calculator](#smart-calculator)   
 [Tic Tac Toe with AI](#tic-tac-toe-with-ai)   
-[To-Do List](#to-do-list)
+[To-Do List](#to-do-list)   
+[Text-Based Browser] (#text-Based-browser)
 
 
 ## Easy
@@ -168,4 +169,16 @@ To-Do list can improve your work and personal life. You can use it to reduce the
 **Learning outcomes**   
 To-Do list that will help you manage your tasks. You will practice using loops, conditions and statement branches. And also you will learn the basics of SQLAlchemy to manage SQLite database on python!
 
+----
+### Text-Based Browser
+
+**About**   
+Sometimes you need to read online documentation or find something on the Internet from the command line or terminal. 
+So, let's use Python to create a text-based browser! Of course, making a real, full-blown browser is a very difficult task. 
+In this project, you'll create a very simple browser that will ignore JavaScript and CSS, won't have cookies, and will only process a limited set of tags. 
+Still, it will be useful and, most importantly, fun to program!
+
+**Learning outcomes**   
+You will learn how HTTP works and how to handle its protocols using Python. 
+You will also learn all about Python input/output, as well as parsing HTML.
 ----
