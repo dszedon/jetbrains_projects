@@ -8,8 +8,8 @@ From easy to hard, and the "challenging" for getting experience.
 [Zookeeper](#zookeeper)   
 [Hangman](#hangman-game)   
 [Credit Calculator](#credit-calculator)   
-[Cofee Machine](#cofee-machine)    
-[Simply Chatty Bot](#simply-chatty-bot)   
+[Cofee Machine](#cofee-machine)   
+[Simple Chatty Bot](#simple-chatty-bot)   
 * Medium   
 [Tic Tac Toe](#zookeeper)   
 [Simple Banking System](#zookeeper)   
