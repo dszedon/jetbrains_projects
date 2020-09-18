@@ -5,11 +5,11 @@ From easy to hard, and the "challenging" for getting experience.
 
 ### Table of Contents
 * Easy   
-[Zookeeper](#zookeeper)   
+[Zookeeper](#zookeeper)   [GitHub](http://github.com)
 [Hangman](#hangman-game)   
 [Credit Calculator](#credit-calculator)   
 [Cofee Machine](#cofee-machine)   
-[Simple Chatty Bot](#simple-chatty-bot)   
+[Simple Chatty Bot](https://github.com/dsalzedon/JetBrains_projects/blob/master/Easy/easy_chatbot.py)   
 * Medium   
 [Tic Tac Toe](#zookeeper)   
 [Simple Banking System](#zookeeper)   
