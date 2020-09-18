@@ -3,7 +3,7 @@
 Projects for JetBrains python certificate.   
 From easy to hard, and the "challenging" for getting experience.   
 
-The OOP difficulty is all the codes but written from a OOP perspective to practice this programming pillar.
+The **OOP** folder contains all the codes but written from a OOP perspective to practice this programming pillar.
 
 ### Table of Contents
 * Easy   
