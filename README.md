@@ -5,19 +5,19 @@ From easy to hard, and the "challenging" for getting experience.
 
 ### Table of Contents
 * Easy   
-[Zookeeper](#zookeeper)   [GitHub](http://github.com)
-[Hangman](#hangman-game)   
-[Credit Calculator](#credit-calculator)   
-[Cofee Machine](#cofee-machine)   
+[Zookeeper](https://github.com/dsalzedon/JetBrains_projects/blob/master/Easy/easy_zookeeper.py)   
+[Hangman](https://github.com/dsalzedon/JetBrains_projects/blob/master/Easy/easy_hangman.py)   
+[Credit Calculator](https://github.com/dsalzedon/JetBrains_projects/blob/master/Easy/easy_creditcalc.py)   
+[Cofee Machine](https://github.com/dsalzedon/JetBrains_projects/blob/master/Easy/easy_cofeemachine.py)   
 [Simple Chatty Bot](https://github.com/dsalzedon/JetBrains_projects/blob/master/Easy/easy_chatbot.py)   
 * Medium   
-[Tic Tac Toe](#zookeeper)   
-[Simple Banking System](#zookeeper)   
-[Rocket Scissors Paper](#rocket-scissors-paper)   
-[Numeric Matrix Processor](#numeric-matrix-processor)   
+[Tic Tac Toe](https://github.com/dsalzedon/JetBrains_projects/blob/master/Medium/medium_tictactoe)   
+[Simple Banking System](https://github.com/dsalzedon/JetBrains_projects/blob/master/Medium/medium_simple_banking_system.py)   
+[Rocket Scissors Paper](https://github.com/dsalzedon/JetBrains_projects/blob/master/Medium/medium_rockpapersci.py)   
+[Numeric Matrix Processor](https://github.com/dsalzedon/JetBrains_projects/blob/master/Medium/medium_numeric_matrix_processor.py)   
 * Hard   
-[Smart Calculator](#smart-calculator)   
-[Tic Tac Toe with AI](#tic-tac-toe-with-ai)   
-[To-Do List](#to-do-list)     
-[Text-Based Browser](#text-Based-browser)   
-[Password Hacker](#password-hacker)   
+[Smart Calculator](https://github.com/dsalzedon/JetBrains_projects/blob/master/Hard/hard_smartcalc.py)   
+[Tic Tac Toe with AI](https://github.com/dsalzedon/JetBrains_projects/blob/master/Hard/hard_tictactoe_ai.py)   
+[To-Do List](https://github.com/dsalzedon/JetBrains_projects/blob/master/Hard/hard_todo_list.py)     
+[Text-Based Browser](https://github.com/dsalzedon/JetBrains_projects/blob/master/Hard/hard_Text_Based_Browser.py)   
+[Password Hacker](https://github.com/dsalzedon/JetBrains_projects/blob/master/Hard/hard_passwordhacker.py)   
