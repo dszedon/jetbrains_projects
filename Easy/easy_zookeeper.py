@@ -146,7 +146,7 @@ It seems there will be more rabbits soon!"""
 
 animals = [camel, lion, deer, goose, bat, rabbit]
 
-# write your code here
+
 a = ""
 while a != "exit":
     a = input("Which habitat # do you need?")
