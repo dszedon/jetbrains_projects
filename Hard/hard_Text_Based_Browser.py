@@ -1,5 +1,4 @@
 """
-
 TEXT-BASED BROWSER
 
 About
