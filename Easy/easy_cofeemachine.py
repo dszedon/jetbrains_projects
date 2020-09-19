@@ -33,93 +33,126 @@ Stage 6
 Time for some final touch-ups: structure the code so that it runs smoothly.
 
 """
-class CoffeeType:
-    def __init__(self, ingredients):
-        self.water = ingredients[0]
-        self.milk = ingredients[1]
-        self.beans = ingredients[2]
-        self.money = ingredients[3]
-        self.cups = ingredients[4]
+def esp():
+    # needs 250 ml of water and 16 g of coffee beans. It costs $4.
+    global w, c, mo, dc
+    if (w > 250) and (c > 16) and (dc > 1):
+        w = w - 250
+        c = c - 16
+        mo = mo + 4
+        dc = dc - 1
+    else:
+        if (w < 250):
+            print("Sorry, not enough water!")
+        elif (c < 16):
+            print("Sorry, not enough cofee!")
+        elif (dc < 1):
+            print("Sorry, not enough disposable cups!")
 
 
-class CoffeeMachine:
-    def __init__(self, stocks):
-        self.water = stocks[0]
-        self.milk = stocks[1]
-        self.beans = stocks[2]
-        self.cups = stocks[3]
-        self.money = stocks[4]
-        self.espresso = CoffeeType([250, 0, 16, -4, 1])
-        self.latte = CoffeeType([350, 75, 20, -7, 1])
-        self.cappuccino = CoffeeType([200, 100, 12, -6, 1])
-
-    def start(self):
-        while True:
-            action = input('Write action (buy, fill, take, remaining, exit):')
-            if action == 'buy':
-                self.buy()
-            elif action == 'fill':
-                self.fill()
-            elif action == 'take':
-                self.take()
-            elif action == 'remaining':
-                self.stock()
-            elif action == 'exit':
-                break
-
-    def buy(self):
-        coffee = input('\nWhat do you want to buy? 1 - espresso, 2 - latte, 3 - cappuccino:\n')
-        if coffee == '1':
-            self.make_coffee(self.espresso)
-        elif coffee == '2':
-            self.make_coffee(self.latte)
-        elif coffee == '3':
-            self.make_coffee(self.cappuccino)
-
-    def fill(self):
-        in_water = int(input('\nWrite how many ml of water do you want to add:\n'))
-        self.water += in_water
-        in_milk = int(input('Write how many ml of milk do you want to add:\n'))
-        self.milk += in_milk
-        in_beans = int(input('Write how many grams of coffee beans do you want to add:\n'))
-        self.beans += in_beans
-        in_cups = int(input('Write how many disposable cups of coffee do you want to add:\n'))
-        self.cups += in_cups
-
-    def take(self):
-        print('\nI gave you $' + str(self.money))
-        self.money = 0
-
-    def stock(self):
-        print('\nThe coffee machine has: ')
-        print(str(self.water) + ' of water')
-        print(str(self.milk) + ' of milk')
-        print(str(self.beans) + ' of coffee beans')
-        print(str(self.cups) + ' of disposable cups')
-        print('$' + str(self.money) + ' of money\n')
-
-    def make_coffee(self, coffee):
-        if (self.water // coffee.water) < 1:
-            print('Sorry, not enough water!\n')
-        elif coffee.milk != 0 and (self.milk // coffee.milk) < 1:
-            print('Sorry, not enough milk!\n')
-        elif (self.beans // coffee.beans) < 1:
-            print('Sorry, not enough coffee beans!\n')
-        elif (self.cups // coffee.cups) < 1:
-            print('Sorry, not enough disposable cups!\n')
-        else:
-            print('I have enough resources, making you a coffee!\n')
-            self.water -= coffee.water
-            self.milk -= coffee.milk
-            self.beans -= coffee.beans
-            self.money -= coffee.money
-            self.cups -= coffee.cups
+def latt():
+    # needs 350 ml of water, 75 ml of milk, and 20 g of coffee beans. It costs $7.
+    global w, m, c, mo, dc
+    if (w > 350) and (m > 75) and (c > 20) and (dc > 1):
+        w = w - 350
+        m = m - 75
+        c = c - 20
+        mo = mo + 7
+        dc = dc - 1
+    else:
+        if (w < 350):
+            print("Sorry, not enough water!")
+        elif (m < 750):
+            print("Sorry, not enough milk!")
+        elif (c < 20):
+            print("Sorry, not enough cofee!")
+        elif (dc < 1):
+            print("Sorry, not enough disposable cups!")
 
 
-water = 400
-milk = 540
-beans = 120
-cups = 9
-money = 550
-rocket = CoffeeMachine([water, milk, beans, cups, money])
-rocket.start()
+def cap():
+    # needs 200 ml of water, 100 ml of milk, and 12 g of coffee. It costs $6.
+    global w, m, c, mo, dc
+    if (w >= 200) and (m >= 100) and (c >= 12) and (dc >= 1):
+        w = w - 200
+        m = m - 100
+        c = c - 12
+        mo = mo + 6
+        dc = dc - 1
+    else:
+        if (w < 200):
+            print("Sorry, not enough water!")
+        elif (m < 100):
+            print("Sorry, not enough milk!")
+        elif (c < 12):
+            print("Sorry, not enough cofee!")
+        elif (dc < 1):
+            print("Sorry, not enough disposable cups!")
+
+
+def buy():
+    buying = input(
+        "What do you want to buy? 1 - espresso, 2 - latte, 3 - cappuccino, back - to main menu:")
+    if (buying == "1") or (buying == "espresso"):
+        esp()
+    elif (buying == "2") or (buying == "latte"):
+        latt()
+    elif (buying == "3") or (buying == "cappuccino"):
+        cap()
+    elif (buying == "back"):
+        pass
+    print("I have enough resources, making you a coffee!")
+
+
+def fill():
+    global w, m, c, dc, mo
+    global in_w, in_m, in_c, in_dc
+    in_w = int(input("Write how many ml of water do you want to add:"))
+    in_m = int(input("Write how many ml of milk do you want to add:"))
+    in_c = int(input("Write how many grams of coffee beans do you want to add:"))
+    in_dc = int(
+        input("Write how many disposable cups of coffee do you want to add:"))
+    w = w + in_w
+    m = m + in_m
+    c = c + in_c
+    dc = dc + in_dc
+
+
+def take():
+    global mo
+    print("I gave you ${}".format(mo))
+    mo = 0
+
+
+def remaining():
+    global w, m, c, dc, mo
+    print("""The coffee machine has:
+{} of water
+{} of milk
+{} of coffee beans
+{} of disposable cups
+${} of money""".format(w, m, c, dc, mo))
+
+
+w = 400
+m = 540
+c = 120
+dc = 9
+mo = 550
+
+while True:
+    action = input("Write action (buy, fill, take, remaining, exit):")
+    if action == "buy":
+        buy()
+
+    elif action == "fill":
+        fill()
+
+    elif action == "take":
+        take()
+
+    elif action == "remaining":
+        remaining()
+
+    elif action == "exit":
+        break
