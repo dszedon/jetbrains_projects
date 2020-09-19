@@ -5,7 +5,9 @@ From easy to hard, and the "challenging projects" for getting real world experie
 
 The **OOP** folder contains all the codes from previous difficulty but written from a OOP perspective to practice this programming pillar.
 
-**Challenging difficulty** is on hold until Jetbrains repairs the Django server
+**Challenging difficulty** is on hold until Jetbrains repairs the Django server.   
+
+Inside each folder is a description of the program(what is about) and the outcomes you would confront as learning experiences.
 
 ### Table of Contents
 * Easy   
