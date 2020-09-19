@@ -7,7 +7,7 @@ The **OOP** folder contains all the codes from previous difficulty but written f
 
 **Challenging difficulty** is on hold until Jetbrains repairs the Django server.   
 
-Inside each folder is a description of the program(what is about) and the outcomes you would confront as learning experiences.
+Inside each folder is a description of each program and the outcomes you would confront as learning experiences.
 
 ### Table of Contents
 * Easy   
