@@ -1,5 +1,6 @@
 """
-Text-Based Browser
+
+TEXT-BASED BROWSER
 
 About
 Sometimes you need to read online documentation or find something on the Internet from the command line or terminal. 
