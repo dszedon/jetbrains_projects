@@ -3,7 +3,9 @@
 Projects for JetBrains python certificate.   
 From easy to hard, and the "challenging projects" for getting real world experience.   
 
-The **OOP** folder contains all the codes from previous difficulty but written from a OOP perspective to practice this programming pillar.
+Difficulties are based on users feedback and time to completing the task, so a project might be in another difficulty if you enter their webpage after sometime.
+
+The **OOP** folder contains codes from previous difficulties but written from a OOP perspective to practice this programming pillar.
 
 **Challenging difficulty** is on hold until Jetbrains repairs the Django server.   
 
