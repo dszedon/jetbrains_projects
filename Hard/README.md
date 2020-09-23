@@ -49,3 +49,14 @@ All sorts of creatures lurk around the Internet, including trolls, pirates, mine
 You will learn how hacking works. You will work with iterators and generators, and you’ll learn a little something about the itertools module – one of the most powerful features of Python. You will practice developing a client app and connecting to a server using the socket module. The project will also get you acquainted with JSON and the time module.
 
 ---
+### Regex Engine   
+
+**About**   
+Regular expressions are a fundamental part of computer science and natural language processing. 
+In this project, you will write an extendable regex engine that can handle basic regex syntax, including literals (a, b, c, etc.), wild-cards (.), 
+and metacharacters (?, *, +, ^, $).
+
+**Learning Outcomes**   
+Learn about the regex syntax, practice working with parsing and slicing, and get more familiar with boolean algebra and recursion
+
+---
