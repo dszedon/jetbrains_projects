@@ -16,7 +16,6 @@ Inside each folder is a description of each program and the outcomes you would c
 [Credit Calculator](https://github.com/dsalzedon/JetBrains_projects/blob/master/Easy/easy_creditcalc.py)   
 [Cofee Machine](https://github.com/dsalzedon/JetBrains_projects/blob/master/Easy/easy_cofeemachine.py)   
 [Simple Chatty Bot](https://github.com/dsalzedon/JetBrains_projects/blob/master/Easy/easy_chatbot.py)   
-[Regex Engine](https://github.com/dsalzedon/JetBrains_projects/blob/master/Easy/easy_regexengine.py)   
 * Medium   
 [Tic Tac Toe](https://github.com/dsalzedon/JetBrains_projects/blob/master/Medium/medium_tictactoe)   
 [Simple Banking System](https://github.com/dsalzedon/JetBrains_projects/blob/master/Medium/medium_simple_banking_system.py)   
@@ -28,3 +27,4 @@ Inside each folder is a description of each program and the outcomes you would c
 [To-Do List](https://github.com/dsalzedon/JetBrains_projects/blob/master/Hard/hard_todo_list.py)     
 [Text-Based Browser](https://github.com/dsalzedon/JetBrains_projects/blob/master/Hard/hard_Text_Based_Browser.py)   
 [Password Hacker](https://github.com/dsalzedon/JetBrains_projects/blob/master/Hard/hard_passwordhacker.py)   
+[Regex Engine](https://github.com/dsalzedon/JetBrains_projects/blob/master/Hard/hard_regexengine.py)   
