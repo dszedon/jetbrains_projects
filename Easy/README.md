@@ -63,14 +63,3 @@ Pack up and let’s hit the road, my friend!
 You’ll get to know the basic syntax of Python and write a simple program using variables, conditions, loops, and functions.
 
 ----
-### Regex Engine   
-
-**About**   
-Regular expressions are a fundamental part of computer science and natural language processing. 
-In this project, you will write an extendable regex engine that can handle basic regex syntax, including literals (a, b, c, etc.), wild-cards (.), 
-and metacharacters (?, *, +, ^, $).
-
-**Learning Outcomes**   
-Learn about the regex syntax, practice working with parsing and slicing, and get more familiar with boolean algebra and recursion
-
----
