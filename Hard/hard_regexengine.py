@@ -31,108 +31,123 @@ Stage 6
 Finally, implement the backslash \ as an escape symbol that allows to use metacharacters as literals. 
 
 """
-from collections import deque
-import sys
+def comparing(regex, string):
 
-sys.setrecursionlimit(10000)
-regx = deque()
-inpt = deque()
+    if regex == ".":
+        regex = string
 
-
-def comparing(regx, inpt):
-
-    check_special_char = str(check_char(regx, inpt))
-
-    if check_special_char == "True":
+    if not regex:
         return True
-    elif check_special_char == "False":
-        return False
+    elif not string:
+        return True if not regex else False
+    else:
+        return True if regex == string else False
 
-    check_wildcard(regx, inpt)
 
-    if regx and inpt:
+def matching(regex, string):
+    metachar_lst = ["?", "*", "+"]
 
-        if check_strings(regx, inpt):
-            return True
+    if regex:
+        if string:
+            if len(regex) > 1 and regex[1] in metachar_lst:
+                return stage_5(regex, string)
+            else:
+                if comparing(regex[0], string[0]):
+                    regex = regex[1:]
+                    string = string[1:]
+                    return matching(regex, string)
+                else:
+                    return False
         else:
-            if regx == inpt:
+            if regex[0] == "$":
                 return True
             else:
-                inpt.popleft()
-                return comparing(regx, inpt)
+                return False
     else:
-        if bool(regx) == False:
-            return True
-        else:
-            return False if bool(inpt) == False else True
+        return True
 
 
-def check_strings(regx, inpt):
-    regx = "".join(regx)
-    inpt = "".join(inpt)
-    return True if regx in inpt else False
+def stage_3(regex, string):
 
-
-def check_char(regx, inpt):
-
-    if "$" in regx and "^" in regx:
-        regx.popleft()
-        regx.pop()
-        regx = "".join(regx)
-        inpt = "".join(inpt)
-
-        if inpt.startswith(regx) and inpt.endswith(regx):
-            return True
-        else:
-            return False
-
-    elif "^" in regx:
-        # regx.popleft()
-        check_wildcard(regx, inpt)
-        regx = "".join(regx)
-        inpt = "".join(inpt)
-
-        if inpt.startswith(regx):
-            return True
-        else:
-            return False
-
-    elif "$" in regx:
-        #  regx.pop()
-        check_wildcard(regx, inpt)
-        regx = "".join(regx)
-        inpt = "".join(inpt)
-
-        if inpt.endswith(regx):
-            return True
-        else:
-            return False
-
-
-def check_wildcard(regx, inpt):
-
-    if "$" in regx:
-        regx.pop()
-        if len(regx) == 1:
-            for indx, lttr in enumerate(regx):
-                if lttr == ".":
-                    regx[indx] = inpt[-1]
-    elif "^" in regx:
-        regx.popleft()
-        if len(regx) == 1:
-            for indx, lttr in enumerate(regx):
-                if lttr == ".":
-                    regx[indx] = inpt[-1]
+    if comparing(regex, string):
+        return True
     else:
-        for indx, lttr in enumerate(regx):
-            if lttr == ".":
-                regx[indx] = inpt[indx]
+        if not string:
+            return False
+        else:
+            if matching(regex, string):
+                return True
+            else:
+                string = string[1:]
+                return stage_3(regex, string)
 
 
-user_regx, user_inpt = input().split("|")
+def stage_4(regex, string):
 
-[regx.append(x) for x in user_regx]
-[inpt.append(x) for x in user_inpt]
+    if "^" in regex:
+        regex = regex[1:]
+        return matching(regex, string)
+    elif "$" in regex:
+        return stage_3(regex, string)
+    else:
+        return stage_3(regex, string)
 
-print(comparing(regx, inpt))
+
+def stage_5(regex, string):
+
+    if regex[1] == "?":
+        return what(regex, string)
+    elif regex[1] == "*":
+        return mult(regex, string)
+    elif regex[1] == "+":
+        return plus(regex, string)
+
+
+def what(regex, string):
+
+    if comparing(regex[0], string[0]):
+        regex = regex[2:]
+        string = string[1:]
+        return matching(regex, string)
+    else:
+        regex = regex[2:]
+        return matching(regex, string)
+
+
+def mult(regex, string):
+
+    if comparing(regex[0], string[0]):
+        if len(string) == 1:
+            regex = regex[2:]
+            return matching(regex, string)
+        else:
+            string = string[1:]
+            return matching(regex, string)
+    else:
+        regex = regex[2:]
+        return matching(regex, string)
+
+
+def plus(regex, string):
+    if comparing(regex[0], string[0]):
+        if len(string) == 1:
+            regex = regex[2:]
+            return matching(regex, string)
+        else:
+            if comparing(string[0], string[1]):
+                string = string[1:]
+                return matching(regex, string)
+            else:
+                regex = regex[2:]
+                string = string[1:]
+                return matching(regex, string)
+    else:
+        return False
+
+# testing
+x = "colou*r|colour"
+user_regex, user_string = x.split("|")
+
+# user_regex, user_string = input().split("|")
+print(stage_4(user_regex, user_string))
 
