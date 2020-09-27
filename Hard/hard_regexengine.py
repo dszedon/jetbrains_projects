@@ -49,9 +49,12 @@ def matching(regex, string):
 
     if regex:
         if string:
-            if len(regex) > 1 and regex[1] in metachar_lst:
+            if regex[0] != "\\" and len(regex) > 1 and regex[1] in metachar_lst:
                 return stage_5(regex, string)
             else:
+                if regex[0] == "\\":
+                    regex = regex[1:]
+
                 if comparing(regex[0], string[0]):
                     regex = regex[1:]
                     string = string[1:]
@@ -143,11 +146,12 @@ def plus(regex, string):
                 return matching(regex, string)
     else:
         return False
+    
 
-# testing
-x = "colou*r|colour"
-user_regex, user_string = x.split("|")
+# for testing
+# x = "colou\\?r|colour"
+# user_regex, user_string = x.split("|")
 
-# user_regex, user_string = input().split("|")
-print(stage_4(user_regex, user_string))
+user_regx, user_inpt = input().split("|")
+print(stage_4(user_regx,user_inpt))
 
