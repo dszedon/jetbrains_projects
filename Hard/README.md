@@ -57,6 +57,6 @@ In this project, you will write an extendable regex engine that can handle basic
 and metacharacters (?, *, +, ^, $).
 
 **Learning Outcomes**   
-Learn about the regex syntax, practice working with parsing and slicing, and get more familiar with boolean algebra and recursion
+Learn about the regex syntax, practice working with parsing and slicing, and get more familiar with boolean algebra and recursion.
 
 ---
