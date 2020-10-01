@@ -30,3 +30,4 @@ Inside each folder is a description of each program and the outcomes you would c
 [Text-Based Browser](https://github.com/dsalzedon/JetBrains_projects/blob/master/Hard/hard_Text_Based_Browser.py)   
 [Password Hacker](https://github.com/dsalzedon/JetBrains_projects/blob/master/Hard/hard_passwordhacker.py)   
 [Regex Engine](https://github.com/dsalzedon/JetBrains_projects/blob/master/Hard/hard_regexengine.py)   
+[Online Translator](https://github.com/dsalzedon/JetBrains_projects/blob/master/Hard/hard_only_translator.py)   
