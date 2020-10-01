@@ -7,29 +7,6 @@ In this project, you will write an extendable regex engine that can handle basic
 including literals (a, b, c, etc.), wild-cards (.), 
 and metacharacters (?, *, +, ^, $).
 
-Learning outcomes
-Learn about the regex syntax, 
-practice working with parsing and slicing, 
-and get more familiar with boolean algebra and recursion.
-
-Stage 1
-Implement a program that compares two single character strings (including the wildcard) and determines if there's a match. 
-
-Stage 2
-Extend your engine to compare two equal length strings using recursion.
-
-Stage 3
-Add the ability to compare a regex to strings that vary in length. 
-
-Stage 4
-Extend the engine to handle the operators ^ and $ that control the position of the regex within a string. 
-
-Stage 5
-Support the additional operators ?, *, and + that control the repetition of a character within a string. 
-
-Stage 6
-Finally, implement the backslash \ as an escape symbol that allows to use metacharacters as literals. 
-
 """
 def comparing(regex, string):
 
