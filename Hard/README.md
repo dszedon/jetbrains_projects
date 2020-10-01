@@ -60,7 +60,7 @@ and metacharacters (?, *, +, ^, $).
 Learn about the regex syntax, practice working with parsing and slicing, and get more familiar with boolean algebra and recursion.
 
 ---
-### Multilingual Online Translator
+### Multilingual Online Translator
 
 **About**   
 Everyone’s familiar with online translators. They giving us a handy way to translate on the go. 
