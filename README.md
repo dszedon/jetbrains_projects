@@ -31,3 +31,4 @@ Inside each folder is a description of each program and the outcomes you would c
 [Password Hacker](https://github.com/dsalzedon/JetBrains_projects/blob/master/Hard/hard_passwordhacker.py)   
 [Regex Engine](https://github.com/dsalzedon/JetBrains_projects/blob/master/Hard/hard_regexengine.py)   
 [Online Translator](https://github.com/dsalzedon/JetBrains_projects/blob/master/Hard/hard_only_translator.py)   
+[Flash Cards] (https://github.com/dsalzedon/JetBrains_projects/blob/master/Hard/hard_flashcards.py)   
