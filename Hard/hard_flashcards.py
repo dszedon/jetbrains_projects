@@ -8,22 +8,27 @@ Flashcards can be used to remember any sort of data, so if you want to create a 
 this project is for you.
 
 """
-
+import argparse
 from io import StringIO
-
+from sys import argv
 
 memory_file = StringIO()
+
+parser = argparse.ArgumentParser()
+parser.add_argument("--import_from", type=str)
+parser.add_argument("--export_to", type=str)
+args = parser.parse_args()
 
 
 def start():
     flash_cards = {}
     cards_mistakes = {}
 
+    if args.import_from:
+        flash_cards = import_cards(args.import_from, flash_cards)
+
     while True:
-        user_action = memory_print(
-            "Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):\n",
-            1,
-        )
+        user_action = memory_print("Input the action (add, remove, import, export, ask, exit, log, hardest card, reset stats):\n", 1,)
 
         if user_action == "add":
             flash_cards = add_card(flash_cards)
@@ -35,7 +40,11 @@ def start():
             cards_mistakes = ask(flash_cards, cards_mistakes)
         elif user_action == "exit":
             memory_print("Bye bye!\n", 0)
-            quit()
+            if args.export_to:
+                export_cards(args.export_to, flash_cards)
+                quit()
+            else:
+                quit()
         elif user_action == "log":
             logger()
             memory_file = StringIO()
@@ -76,21 +85,16 @@ def add_card(flash_cards):
                     if definition in flash_cards.values():
                         raise Exception
                 except Exception:
-                    memory_print(
-                        'The definition "{}" already exists.'.format(definition), 0
-                    )
+                    memory_print('The definition "{}" already exists.'.format(definition), 0)
                 else:
                     flash_cards[card] = definition
-                    memory_print(
-                        'The pair ("{}":"{}") has been added.'.format(card, definition),
-                        0,
-                    )
+                    memory_print('The pair ("{}":"{}") has been added.'.format(card, definition), 0)
                     return flash_cards
 
 
 def remove(flash_cards):
-    try:
 
+    try:
         card = memory_print("Which card:\n", 1)
         if card not in flash_cards:
             raise Exception
@@ -104,7 +108,6 @@ def remove(flash_cards):
 
 
 def export_import(action, flash_cards):
-
     file_name = str(memory_print("File name:\n", 1))
     user_path = "{}".format(file_name)
 
@@ -118,6 +121,7 @@ def export_import(action, flash_cards):
 
 def import_cards(user_path, flash_cards):
     line_count = 0
+
     if flash_cards is None:
         flash_cards = {}
 
@@ -139,6 +143,7 @@ def import_cards(user_path, flash_cards):
 
 def export_cards(user_path, flash_cards):
     count_cards = 0
+
     with open(user_path, "w", encoding="utf-8") as user_file:
         for keys, values in zip(flash_cards.keys(), flash_cards.values()):
             user_file.write("{}:{}\n".format(keys, values))
@@ -151,6 +156,7 @@ def ask(flash_cards, cards_mistakes):
     questions_number = 0
 
     ask_number = int(memory_print("How many times to ask?\n", 1))
+
     while True:
         for card in flash_cards:
             cards_mistakes = get_def(flash_cards, cards_mistakes, card)
@@ -178,12 +184,7 @@ def get_def(flash_cards, cards_mistakes, card):
 
         else:
             key = get_key(flash_cards, answer)
-            memory_print(
-                'Wrong. The right answer is "{}", but your definition is correct for "{}".\n'.format(
-                    flash_cards[card], key
-                ),
-                0,
-            )
+            memory_print('Wrong. The right answer is "{}", but your definition is correct for "{}".\n'.format(flash_cards[card], key), 0)
             cards_mistakes[card] += 1
             return cards_mistakes
     else:
@@ -209,6 +210,7 @@ def logger():
 
 
 def hardest_card(cards_mistakes):
+
     if cards_mistakes:
         return get_errors(cards_mistakes)
     else:
@@ -238,13 +240,12 @@ def get_errors(cards_mistakes):
         return 'The hardest card is "{}". You have "{}" errors answering it.\n'.format(hard_card, val)
 
 
-
-
 def reset(cards_mistakes):
     for x in cards_mistakes:
         cards_mistakes[x] = 0
-    memory_print("Card statistics have been reset.\n", 0)
+    memory_print("Card statistics has been reset.\n", 0)
     return cards_mistakes
 
 
 start()
+
