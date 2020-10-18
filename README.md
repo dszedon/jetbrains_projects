@@ -22,7 +22,8 @@ Inside each folder is a description of each program and the outcomes you would c
 [Tic Tac Toe](https://github.com/dsalzedon/JetBrains_projects/blob/master/Medium/medium_tictactoe)   
 [Simple Banking System](https://github.com/dsalzedon/JetBrains_projects/blob/master/Medium/medium_simple_banking_system.py)   
 [Rocket Scissors Paper](https://github.com/dsalzedon/JetBrains_projects/blob/master/Medium/medium_rockpapersci.py)   
-[Numeric Matrix Processor](https://github.com/dsalzedon/JetBrains_projects/blob/master/Medium/medium_numeric_matrix_processor.py)   
+[Numeric Matrix Processor](https://github.com/dsalzedon/JetBrains_projects/blob/master/Medium/medium_numeric_matrix_processor.py)  
+[Easy Riders Bus Company](https://github.com/dsalzedon/JetBrains_projects/blob/master/Medium/bus_company.py)   
 * Hard   
 [Smart Calculator](https://github.com/dsalzedon/JetBrains_projects/blob/master/Hard/hard_smartcalc.py)   
 [Tic Tac Toe with AI](https://github.com/dsalzedon/JetBrains_projects/blob/master/Hard/hard_tictactoe_ai.py)   
@@ -32,4 +33,4 @@ Inside each folder is a description of each program and the outcomes you would c
 [Regex Engine](https://github.com/dsalzedon/JetBrains_projects/blob/master/Hard/hard_regexengine.py)   
 [Online Translator](https://github.com/dsalzedon/JetBrains_projects/blob/master/Hard/hard_only_translator.py)   
 [Flash Cards](https://github.com/dsalzedon/JetBrains_projects/blob/master/Hard/hard_flashcards.py)   
-[Easy Riders Bus Company](https://github.com/dsalzedon/JetBrains_projects/blob/master/Medium/bus_company.py)   
+
