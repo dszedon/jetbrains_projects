@@ -32,3 +32,4 @@ Inside each folder is a description of each program and the outcomes you would c
 [Regex Engine](https://github.com/dsalzedon/JetBrains_projects/blob/master/Hard/hard_regexengine.py)   
 [Online Translator](https://github.com/dsalzedon/JetBrains_projects/blob/master/Hard/hard_only_translator.py)   
 [Flash Cards](https://github.com/dsalzedon/JetBrains_projects/blob/master/Hard/hard_flashcards.py)   
+[Easy Riders Bus Company](https://github.com/dsalzedon/JetBrains_projects/blob/master/Medium/bus_company.py)   
