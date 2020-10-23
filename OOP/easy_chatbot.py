@@ -7,7 +7,7 @@ During this journey you will also play some word and number games that you are g
 Pack up and let’s hit the road, my friend!
 
 """
-class bot():
+class bot:
     def __init__(self, bot_name, birth_year):
         print('Hello! My name is ' + bot_name + '.')
         print('I was created in ' + birth_year + '.')
