@@ -13,7 +13,7 @@ Now you can actually create this game yourself!
 
 import random
 
-class Hangman():
+class Hangman:
     
     def __init__(self):
         self.lst = ('python', 'java', 'kotlin', 'javascript')
