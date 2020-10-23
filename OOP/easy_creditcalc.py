@@ -12,7 +12,7 @@ import math
 import argparse
 from sys import argv
 
-class CreditCalc():
+class CreditCalc:
 
     def calc_diff(p, n, i):
         i = i / (12 * 1)
