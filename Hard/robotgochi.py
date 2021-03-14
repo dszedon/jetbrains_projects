@@ -76,10 +76,7 @@ class Robot:
             condition_bored = "bored" in vitals and action != "play"
             condition_overheat = "overheat" in vitals and action != "sleep"
 
-            if (
-                condition_battery is True
-                or condition_bored is True
-            ):
+            if condition_battery is True or condition_bored is True:
                 print(f"\n{vitals}")
                 continue
             elif condition_overheat is True:
@@ -188,10 +185,10 @@ class Robot:
         while True:
             user_input = input("\nWhich game would you like to play?\n")
 
-            if user_input == "Rock-paper-scissors":
+            if user_input.capitalize() == "Rock-paper-scissors":
                 self.rck_sci_ppr()
                 break
-            elif user_input == "Numbers":
+            elif user_input.capitalize() == "Numbers":
                 self.num_game()
                 break
             else:
@@ -202,13 +199,12 @@ class Robot:
 
         event_msg = self.unpleasent_event()
 
-
         vitals = self.check_vitals()
 
         if "rusty" in vitals:
             print(vitals)
             quit()
-        
+
         self.overheat = 100 if self.overheat >= 95 else self.overheat + 5
         self.boredom = 0 if self.boredom <= 10 else self.boredom - 10
 
