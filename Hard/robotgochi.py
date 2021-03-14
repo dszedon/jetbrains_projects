@@ -8,14 +8,63 @@ class Robot:
         self.overheat = 0
         self.skill_level = 0
         self.boredom = 0
+        self.rust = 0
         self.win_book = {"user": 0, "robot": 0, "draw": 0}
+
+        # TXT MESSAGGES
+        self.skill_msg = f"{self.name}'s level of skill was {self.old_skill}. Now it is {self.skill_level}."
+        self.battery_msg = f"{self.name}'s level of the battery was {self.old_battery}. Now it is {self.battery}."
+        self.overheat_msg = f"{self.name}'s level of overheat was {self.old_overheat}. Now it is {self.overheat}."
+        self.boredom_msg = f"{self.name}'s level of boredom was {self.old_boredom}. Now it is {self.boredom}."
+        self.rust_msg = f"{self.name}'s level of boredom was {self.old_rust}. Now it is {self.rust}."
+
+    def old_values(self):
+        self.old_skill = self.skill_level
+        self.old_battery = self.battery
+        self.old_overheat = self.overheat
+        self.old_boredom = self.boredom
+        self.old_rust = self.rust
+
+    def check_vitals(self):
+        if self.battery == 0:
+            print("The level of the battery is 0, {self.name} needs recharging!")
+        elif self.boredom == 100:
+            print("{self.name} is too bored! {self.name} needs to have fun!")
+        elif self.overheat == 100:
+            print(
+                f"The level of overheat reached 100, {self.name} has blown up! Game over. Try again?"
+            )
+        elif self.rust == 100:
+            print(f"{self.name} is too rusty! Game over. Try again?")
+
+    def unpleasent_event(self):
+
+        event = choice(["puddle", "sprinkler", "pool", "none"])
+
+        if event == "puddle":
+            self.rust = 100 if self.rust >= 90 else self.rust + 10
+            return f"Oh no, {self.name} stepped into a puddle!"
+        elif event == "sprinkler":
+            self.rust = 100 if self.rust >= 70 else self.rust + 30
+            return f"Oh, {self.name} encountered a sprinkler!."
+        elif event == "pool":
+            self.rust = 100 if self.rust >= 50 else self.rust + 50
+            return f"Guess what! {self.name} fell into the pool!"
+        else:
+            return "none"
 
     def actions(self):
         while True:
 
-            print(
-                f"\nAvailable interactions with {self.name}:\nexit – Exit\ninfo – Check the vitals\nrecharge – Recharge\nsleep – Sleep mode\nplay – Play\n"
-            )
+            print(f"\nAvailable interactions with {self.name}:")
+            print("exit – Exit")
+            print("info – Check the vitals")
+            print("work – Work")
+            print("play – Play")
+            print("oil – Oil")
+            print("recharge – Recharge")
+            print("sleep – Sleep mode")
+            print("learn – Learn skills\n")
 
             action = input("Choose:\n")
 
@@ -24,26 +73,52 @@ class Robot:
                 quit()
             elif action == "info":
                 print(self.stats())
+            elif action == "work":
+                print(self.work())
+            elif action == "play":
+                self.select_game()
+                print(self.end_game())
+            elif action == "oil":
+                print(self.oil())
             elif action == "recharge":
                 print(self.recharge())
             elif action == "sleep":
                 print(self.sleep())
-            elif action == "play":
-                self.select_game()
-                print(self.end_game())
             else:
                 print("\nInvalid input, try again!")
 
     def stats(self):
-        return f"\n{self.name}'s stats are: the battery is {self.battery},\noverheat is {self.overheat},\nskill level is {self.skill_level},\nboredom is {self.boredom}."
+        return f"\n{self.name}'s stats are: the battery is {self.battery},\noverheat is {self.overheat},\nskill level is {self.skill_level},\nboredom is {self.boredom},\nrust level is {self.rust}."
+
+    def work(self):
+
+        if self.skill_level < 50:
+            return f"{self.name} has got to learn before working!"
+        else:
+            self.old_values()
+
+            self.battery -= 10
+            self.boredom += 10
+            self.overheat += 10
+
+            event_msg = self.unpleasent_event()
+
+            event_txt = f"\n{event_msg}\n\n{self.boredom_msg}\n{self.overheat_msg}\n{self.battery_msg}\n\n{self.name} did well!"
+            no_event_txt = f"\n{self.boredom_msg}\n{self.overheat_msg}\n{self.battery_msg}\n\n{self.name} did well!"
+
+            return no_event_txt if event_msg == "none" else event_txt
+
+    def oil(self):
+        if self.rust == 0:
+            return f"{self.name} is fine, no need to oil!"
+        else:
+            self.rust = 0 if self.rust <= 20 else self.rust - 20
+            return f"{self.rust_msg}\n{self.name} is less rusty!"
 
     def recharge(self):
         if self.battery == 100:
             return f"{self.name} is charged!"
         else:
-            old_battery = self.battery
-            old_boredom = self.boredom
-            old_overheat = self.overheat
 
             if self.battery < 91:
                 self.battery += 10
@@ -58,24 +133,32 @@ class Robot:
             else:
                 self.boredom = 100
 
-            overheat_msg = f"{self.name}'s level of overheat was {old_overheat}. Now it is {self.overheat}."
-            battery_msg = f"{self.name}'s level of the battery was {old_battery}. Now it is {self.battery}."
-            boredom_msg = f"{self.name}'s level of boredom was {old_boredom}. Now it is {self.boredom}."
             recharge_msg = f"{self.name} is recharged!"
 
-            return f"{overheat_msg}\n{battery_msg}\n{boredom_msg}\n{recharge_msg}"
+            return f"{self.overheat_msg}\n{self.battery_msg}\n{self.boredom_msg}\n{recharge_msg}"
 
     def sleep(self):
         if self.overheat == 0:
             return f"{self.name} is cool!"
         else:
-            old_overheat = self.overheat
             if self.overheat <= 19:
                 self.overheat = 0
             else:
                 self.overheat -= 20
 
-            return f"\n{self.name} cooled off!\n{self.name}'s level of overheat was {old_overheat}. Now it is {self.overheat}."
+            return f"\n{self.overheat_msg}\n{self.name} cooled off!"
+
+    def learn(self):
+        if self.skill_level == 100:
+            return f"There's nothing for {self.name} to learn!"
+        else:
+
+            self.skill_level += 10
+            self.battery -= 10
+            self.overheat += 10
+            self.boredom += 5
+
+            return f"\n{self.skill_msg}\n{self.overheat}\n{self.battery_msg}\n{self.boredom_msg}\n{self.name}'s' has become smarter!"
 
     def select_game(self):
         while True:
@@ -91,25 +174,21 @@ class Robot:
                 print("Please choose a valid option: Numbers or Rock-paper-scissors?")
 
     def end_game(self):
-        old_boredom = self.boredom
-        old_overheat = self.overheat
+        self.old_values()
 
-        if self.overheat < 91:
-            self.overheat += 10
-        else:
-            self.overheat = 100
-            if self.boredom > 10:
-                self.boredom -= 10
-            else:
-                self.boredom = 0
+        event_msg = self.unpleasent_event()
 
-        boredom_msg = f"{self.name}'s level of boredom was {old_boredom}. Now it is {self.boredom}."
-        overheat_msg = f"{self.name}'s level of overheat was {old_overheat}. Now it is {self.overheat}."
+        self.overheat = 100 if self.overheat >= 90 else self.overheat + 10
+        self.boredom = 0 if self.boredom <= 10 else self.boredom - 10
 
         if self.boredom == 0:
-            return f"{boredom_msg}\n{overheat_msg}\n{self.name} is in a great mood!"
+            event_txt = f"\n{event_msg}\n\n{self.boredom_msg}\n{self.overheat_msg}\n{self.name} is in a great mood!"
+            no_event_txt = f"\n{self.boredom_msg}\n{self.overheat_msg}\n{self.name} is in a great mood!"
         else:
-            return f"{boredom_msg}\n{overheat_msg}\n"
+            event_txt = f"\n{event_msg}\n\n{self.boredom_msg}\n{self.overheat_msg}"
+            no_event_txt = f"\n{self.boredom_msg}\n{self.overheat_msg}"
+
+        return no_event_txt if event_msg == "none" else event_txt
 
     def num_game(self):
         goal_num = randrange(0, 1000000)
@@ -120,21 +199,17 @@ class Robot:
             check_response = self.check_user_num(user_num)
 
             if check_response == "quit":
-                print(
-                    f"""\nYou won: {self.win_book['user']},
-The robot won: {self.win_book['robot']},
-Draws: {self.win_book['draw']}.\n"""
-                )
+                print(f"\nYou won: {self.win_book['user']},")
+                print(f"The robot won: {self.win_book['robot']},")
+                print(f"Draws: {self.win_book['draw']}.\n")
                 break
             elif check_response != "pass":
                 print(check_response)
             else:
                 winner = self.check_winner_num(goal_num, user_num, robot_num)
 
-                print(
-                    f"""\nThe robot entered the number {robot_num}.
-The goal number is {goal_num}."""
-                )
+                print(f"\nThe robot entered the number {robot_num}.")
+                print(f"The goal number is {goal_num}.")
 
                 if winner == "user":
                     print("You won!")
@@ -181,11 +256,9 @@ The goal number is {goal_num}."""
             user_move = input("\nWhat is your move?\n")
 
             if "exit game" in user_move:
-                print(
-                    f"""\nYou won: {self.win_book['user']},
-        The robot won: {self.win_book['robot']},
-        Draws: {self.win_book['draw']}.\n"""
-                )
+                print(f"\nYou won: {self.win_book['user']},")
+                print(f"The robot won: {self.win_book['robot']},")
+                print(f"Draws: {self.win_book['draw']}.\n")
                 break
             else:
                 if user_move.capitalize() not in moves:
