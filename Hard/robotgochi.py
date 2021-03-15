@@ -76,7 +76,10 @@ class Robot:
             condition_bored = "bored" in vitals and action != "play"
             condition_overheat = "overheat" in vitals and action != "sleep"
 
-            if condition_battery is True or condition_bored is True:
+            if condition_battery is True:
+                print(f"\n{vitals}")
+                continue
+            elif condition_bored is True:
                 print(f"\n{vitals}")
                 continue
             elif condition_overheat is True:
@@ -105,7 +108,7 @@ class Robot:
                 print("\nInvalid input, try again!")
 
     def stats(self):
-        return f"\n{self.name}'s stats are: the battery is {self.battery},\noverheat is {self.overheat},\nskill level is {self.skill_level},\nboredom is {self.boredom},\nrust level is {self.rust}."
+        return f"\n{self.name}'s stats are: the battery is {self.battery},\noverheat is {self.overheat},\nskill level is {self.skill_level},\nboredom is {self.boredom},\nrust is {self.rust}."
 
     def work(self):
 
@@ -137,8 +140,12 @@ class Robot:
         if self.rust == 0:
             return f"\n{self.name} is fine, no need to oil!"
         else:
+            self.old_values()
+
             self.rust = 0 if self.rust <= 20 else self.rust - 20
-            return f"\n{self.rust_msg}\n{self.name} is less rusty!"
+
+            self.alert_msg()
+            return f"\n{self.rust_msg}\n\n{self.name} is less rusty!"
 
     def recharge(self):
         if self.battery == 100:
@@ -205,13 +212,13 @@ class Robot:
             print(vitals)
             quit()
 
-        self.overheat = 100 if self.overheat >= 95 else self.overheat + 5
+        self.overheat = 100 if self.overheat >= 90 else self.overheat + 10
         self.boredom = 0 if self.boredom <= 10 else self.boredom - 10
 
         self.alert_msg()
 
         if self.boredom == 0:
-            event_txt = f"{event_msg}\n\n{self.rust_msg}\n{self.overheat_msg}\n{self.boredom_msg}\n{self.name} is in a great mood!"
+            event_txt = f"{event_msg}\n\n{self.rust_msg}\n{self.overheat_msg}\n{self.boredom_msg}\n\n{self.name} is in a great mood!"
             no_event_txt = f"{self.overheat_msg}\n{self.boredom_msg}\n{self.name} is in a great mood!"
         else:
             event_txt = f"{event_msg}\n\n{self.rust_msg}\n\n{self.overheat_msg}{self.boredom_msg}"
@@ -277,7 +284,7 @@ class Robot:
             return "robot"
 
     def rck_sci_ppr(self):
-        moves = ["Rock", "Scissors", "Paper"]
+        moves = ["rock", "scissors", "paper"]
         while True:
 
             robot_move = choice(moves)
@@ -290,20 +297,20 @@ class Robot:
                 print(f"Draws: {self.win_book['draw']}.\n")
                 break
             else:
-                if user_move.capitalize() not in moves:
+                if user_move.lower() not in moves:
                     print("\nNo such option! Try again!")
                 else:
                     print(f"\nThe robot chose {robot_move}")
-                    if user_move.capitalize() == robot_move:
+                    if user_move.lower() == robot_move:
                         self.win_book["draw"] += 1
                         print("It's a draw!")
-                    elif user_move.capitalize() == "Rock" and robot_move == "Scissors":
+                    elif user_move.lower() == "rock" and robot_move == "scissors":
                         self.win_book["user"] += 1
                         print("You won!")
-                    elif user_move.capitalize() == "Scissors" and robot_move == "Paper":
+                    elif user_move.lower() == "scissors" and robot_move == "paper":
                         self.win_book["user"] += 1
                         print("You won!")
-                    elif user_move.capitalize() == "Paper" and robot_move == "Rock":
+                    elif user_move.lower() == "paper" and robot_move == "rock":
                         self.win_book["user"] += 1
                         print("You won!")
                     else:
@@ -311,6 +318,6 @@ class Robot:
                         print("The robot won!")
 
 
-robo_name = input("How will you call your robot?\n")
-robo = Robot(robo_name)
-robo.actions()
+robot_name = input("How will you call your robot?\n")
+robot = Robot(robot_name)
+robot.actions()
