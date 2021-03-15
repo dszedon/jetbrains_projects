@@ -18,6 +18,7 @@ Inside each folder is a description of each program and the outcomes you would c
 [Credit Calculator](https://github.com/dsalzedon/JetBrains_projects/blob/master/Easy/easy_creditcalc.py)   
 [Cofee Machine](https://github.com/dsalzedon/JetBrains_projects/blob/master/Easy/easy_cofeemachine.py)   
 [Simple Chatty Bot](https://github.com/dsalzedon/JetBrains_projects/blob/master/Easy/easy_chatbot.py)   
+[Currency Converter](https://github.com/dsalzedon/JetBrains_Projects/blob/master/Easy/currency_converter.py)   
 * Medium   
 [Tic Tac Toe](https://github.com/dsalzedon/JetBrains_projects/blob/master/Medium/medium_tictactoe)   
 [Simple Banking System](https://github.com/dsalzedon/JetBrains_projects/blob/master/Medium/medium_simple_banking_system.py)   
