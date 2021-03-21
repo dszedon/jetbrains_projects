@@ -26,11 +26,11 @@ while True:
             mrk_dwn = mrk_dwn + f'*{txt}*'
         elif formatter == lst_formatter[3]:
             code = input('- Text: ')
-            mrk_dwn == mrk_dwn + f'`{code}`'
+            mrk_dwn = mrk_dwn + f'`{code}`'
         elif formatter == lst_formatter[4]:
             label = input('- Label: ')
             url = input('- URL: ')
-            mrk_dwn = mrk_dwn + f'[{label}] ({url})'
+            mrk_dwn = mrk_dwn + f'[{label}] ({url})\n'
         elif formatter == lst_formatter[5]:
             level = int(input('- Level: '))
             txt = input('- Text: ')
@@ -39,7 +39,7 @@ while True:
             mrk_dwn = mrk_dwn + "\n"
     
     if formatter == lst_formatter[3]:
-        print(mrk_dwn)
+        print(f'`{code}`')
     else:
         print(mrk_dwn)
             
